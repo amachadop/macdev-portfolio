@@ -1,0 +1,116 @@
+---
+interface Props{
+    title: string,
+    color: string,
+    from: string,
+    to: string
+}
+
+const {title,color,from,to} = Astro.props;
+---
+<div class=`skills-card ${color}`>
+    <div class="skills-card-header">
+        <slot name="icon"/>
+        <h6 class="skills-card-title">{title}</h6>
+    </div>
+    <div class="date">{from} - { to!='' ? {to} : 'Actualidad'}</div>
+    <slot />
+</div>
+
+<style>
+p{
+    text-align: justify;
+}
+
+.skills-card{
+    background-color: #c3cddf;
+    border-radius: 1em;
+    padding: .7em;
+
+
+    .skills-card-header{
+        display: flex;
+        align-items: center;
+        gap: .5em;
+
+        .skills-card-title{
+            color: #667080;
+            margin: 0;
+        }
+
+        svg{
+            stroke: #667080;
+        }
+
+    }
+
+    .date{
+        color: #667080;
+        display: flex;
+        align-items: center;
+        gap: .5em;
+        font-style: italic;
+        font-weight: 400;
+    }
+
+    p{
+        margin-left: 2em;
+    }
+
+}
+
+.skills-card.primary{
+    background-color: #efcfe3;
+
+    .skills-card-header{
+
+        .skills-card-title{
+            color: #e27396;
+            font-weight: bold;
+        }
+
+        svg{
+            stroke: #e27396;
+        }
+
+    }
+
+    .date{
+        color: #e27396;
+    }
+
+}
+
+.skills-card.secondary{
+    background-color: #bde0fe;
+
+    .skills-card-header{
+
+        .skills-card-title{
+            color: #4ca4f7;
+            font-weight: bold;
+        }
+
+        svg{
+            stroke: #4ca4f7;
+        }
+
+    }
+
+    .date{
+        color: #4ca4f7;
+    }
+    
+}
+
+@media (max-width: 767px) {
+    .skills-card{
+
+        p{
+            margin-left: 0;
+        }
+
+    }
+}
+
+</style>

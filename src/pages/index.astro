@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SkillCard from "../components/SkillCard.astro";
+---
+
+<Layout title="Machado.Dev - Portfolio" page='index'>
+    <div class="container-fluid p-4">
+        <h4 class="section-title">Acerca de Mi</h4>
+
+        <p>Mi primer recuerdo frente a una computadora fue cambiar el fondo de pantalla de Windows XP. Algo tan simple despertó en mí una fascinación por la tecnología que me llevó, años después, a dar mis primeros pasos en la programación usando Pascal con Borland Delphi 7. Aún sin comprender del todo conceptos como la programación orientada a objetos, la posibilidad de darle órdenes a una máquina y ver cómo las ejecutaba fue, sin duda, una de las sensaciones más emocionantes que he experimentado.</p>
+        <p>Con el tiempo, fui adquiriendo más conocimientos y exploré el mundo del desarrollo móvil. Llegué a publicar algunas aplicaciones en la Google Play Store; aunque no fueron un éxito en descargas, cada proyecto me motivó a seguir aprendiendo y mejorando. En 2023, me gradué como Ingeniero en Ciencias Informáticas en la Universidad de las Ciencias Informáticas. Durante mis años de estudiante, continué desarrollando aplicaciones móviles y me inicié en el desarrollo web.</p>
+        <p>Actualmente me considero principalmente un programador backend, aunque tengo habilidades tanto en backend como en frontend. En el último año, me he especializado en la creación de sistemas de gestión (CRM) utilizando Django y Django REST Framework, lo que me ha permitido ganar experiencia tanto técnica como práctica en el desarrollo de este tipo de soluciones.</p>
+
+        <h4 class="section-title">¿Qué puedo hacer?</h4>
+
+        <div class="row g-2">
+
+            <div class="col-xl-6">
+
+                <SkillCard title='APIs' color='primary'>
+                    <svg slot="icon"  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-server-bolt"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 4m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z" /><path d="M15 20h-9a3 3 0 0 1 -3 -3v-2a3 3 0 0 1 3 -3h12" /><path d="M7 8v.01" /><path d="M7 16v.01" /><path d="M20 15l-2 3h3l-2 3" /></svg>
+                    Desarrollo de APIs REST con Django REST Framework para sistemas de gestión personalizados y escalables.
+                </SkillCard>
+
+            </div>
+
+            <div class="col-xl-6">
+
+                <SkillCard title='Landing Pages' color='secondary'>
+                    <svg slot="icon"  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-type-html"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M5 12v-7a2 2 0 0 1 2 -2h7l5 5v4" /><path d="M2 21v-6" /><path d="M5 15v6" /><path d="M2 18h3" /><path d="M20 15v6h2" /><path d="M13 21v-6l2 3l2 -3v6" /><path d="M7.5 15h3" /><path d="M9 15v6" /></svg>
+                    Diseño y desarrollo de sistemas de gestión para empresas: paneles de administración, sistemas de facturación, gestión de clientes y más.
+                </SkillCard>
+
+            </div>
+
+            <div class="col-xl-6">
+
+                <SkillCard title='CRMs' color='secondary'>
+                    <svg slot="icon"  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-desktop-cog"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 16h-8a1 1 0 0 1 -1 -1v-10a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v7" /><path d="M7 20h5" /><path d="M9 16v4" /><path d="M19.001 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M19.001 15.5v1.5" /><path d="M19.001 21v1.5" /><path d="M22.032 17.25l-1.299 .75" /><path d="M17.27 20l-1.3 .75" /><path d="M15.97 17.25l1.3 .75" /><path d="M20.733 20l1.3 .75" /></svg>
+                    Configuración, dockerización y despliegue de sistemas web, asegurando entornos estables y fácilmente replicables.
+                </SkillCard>
+
+            </div>
+
+            <div class="col-xl-6">
+
+                <SkillCard title='Despliegue de Sistemas' color='primary'>
+                    <svg  slot="icon" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-docker"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 12.54c-1.804 -.345 -2.701 -1.08 -3.523 -2.94c-.487 .696 -1.102 1.568 -.92 2.4c.028 .238 -.32 1 -.557 1h-14c0 5.208 3.164 7 6.196 7c4.124 .022 7.828 -1.376 9.854 -5c1.146 -.101 2.296 -1.505 2.95 -2.46z" /><path d="M5 10h3v3h-3z" /><path d="M8 10h3v3h-3z" /><path d="M11 10h3v3h-3z" /><path d="M8 7h3v3h-3z" /><path d="M11 7h3v3h-3z" /><path d="M11 4h3v3h-3z" /><path d="M4.571 18c1.5 0 2.047 -.074 2.958 -.78" /><path d="M10 16l0 .01" /></svg>
+                    Configuración y despliegue de los sistemas web utilizando Docker.
+                </SkillCard>
+
+            </div>
+
+        </div>
+    </div>
+
+</Layout>
+
+<style>
+
+
+</style>

@@ -1,0 +1,75 @@
+---
+import MButton from './MButton.astro';
+
+interface Props{
+    title: string,
+    tools: Array<string>,
+    description: string,
+    is_finished: boolean
+}
+
+const {title,tools,description, is_finished} = Astro.props;
+
+import {tools_logos} from '../utils/tools_logos.js';
+
+let tools_html = ``;
+tools.forEach(tool => {
+    if(tools_logos[tool]){
+        tools_html+=`<img src="${tools_logos[tool]}" />`;
+    }
+});
+---
+<div class="container">
+    <h6 class="title">{title}</h6>
+    { is_finished ? <span class="badge bg-success">Terminado</span> : <span class="badge bg-secondary">En Desarrollo</span> }
+    <p class="description">{description}</p>
+    <div class="tools-container" set:html={tools_html}></div>
+    <MButton title='Detalles' link=`/projects/${title}` m_class=''>
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-code"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M10 13l-1 2l1 2" /><path d="M14 13l1 2l-1 2" /></svg>
+    </MButton>
+</div>
+
+<style>
+.container{
+    width: 100%;
+    background-color: var(--second-background);
+    padding: 1.3em 1em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+
+    .button-65{
+        font-size: small;
+        height: auto;
+        padding: .7em;
+        border-radius: .5em;
+        width: 100% !important;
+        gap: .5em;
+    }
+
+    .tools-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5em;
+        flex-wrap: wrap;
+
+        img{
+            width: 15%;
+        }
+    }
+
+    .description{
+        width: 100%;
+    }
+
+    .badge{
+        font-size: .7em;
+        font-weight: 400;
+        border-radius: .3em;
+    }
+
+}
+</style>

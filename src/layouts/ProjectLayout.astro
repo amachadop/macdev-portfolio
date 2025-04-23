@@ -1,0 +1,119 @@
+---
+interface Props{
+    title: string,
+    page: string
+}
+
+import 'bootstrap/dist/css/bootstrap.css';
+import TabsContainer from '../components/TabsContainer.astro';
+import { ClientRouter } from 'astro:transitions';
+import MButton from '../components/MButton.astro';
+import {data} from '../utils/pages-data.js';
+
+const {pages_data} = data;
+const {title,page} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <title>{title}</title>
+    <ClientRouter />
+</head>
+<body>
+    <main style="overflow-y: auto; height: 100vh;">
+        <div class="container-xl pt-5 pb-5 d-flex flex-column">
+
+            <div class="row g-3">
+
+                <div class="col-12">
+                    <div style="width: 250px;">
+                        <MButton title='Volver a Proyectos' link='/projects/' m_class=''>
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon me-2 icon-tabler icons-tabler-outline icon-tabler-arrow-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg>
+                        </MButton>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card p-0">
+                        
+                        <slot />
+
+                        <footer>
+                            <span><strong>machado.Dev™</strong> ©2025 Portfolio Personal</span>
+                        </footer>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-auto">
+
+                    <TabsContainer transition:name='tab-container' page={page} tabs_list={JSON.stringify(pages_data)}/>
+
+                </div>
+
+            </div>
+            
+        </div>
+    </main>
+
+</body>
+</html>
+
+<style is:global>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    
+    *{
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+    }
+    
+    h1,h2,h3,h4,h5,h6{
+        font-weight: 600;
+        color: var(--primary-color-hover);
+    }
+    
+    p{
+        font-weight: 200;
+        text-align: justify;
+    }
+    
+    :root{
+        --background-color: #151f2c;
+        --second-background: #f1f1e6;
+        --primary-color: #00787F;
+        --primary-color-hover: #00495D;
+    }
+    
+    .section-container{
+        background-color: var(--second-background);
+    }
+    
+    body{
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1200' height='560' preserveAspectRatio='none' viewBox='0 0 1200 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask4694%26quot%3b)' fill='none'%3e%3crect width='1200' height='560' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient4695%26quot%3b)'%3e%3c/rect%3e%3crect width='348' height='348' clip-path='url(%26quot%3b%23SvgjsClipPath4696%26quot%3b)' x='-141.17' y='193.72' fill='url(%26quot%3b%23SvgjsPattern4697%26quot%3b)' transform='rotate(166.11%2c 32.83%2c 367.72)'%3e%3c/rect%3e%3cpath d='M289.01 500.52L293.5 512.52 282.78 519.53 287.27 531.52 276.56 538.54 281.05 550.53 270.34 557.54M281.4 498.03L285.9 510.03 275.18 517.04 279.67 529.03 268.96 536.05 273.45 548.04 262.73 555.05' stroke='rgba(137%2c 213%2c 123%2c 1)' stroke-width='1.67' stroke-dasharray='3%2c 2'%3e%3c/path%3e%3crect width='280.72' height='280.72' clip-path='url(%26quot%3b%23SvgjsClipPath4698%26quot%3b)' x='503.32' y='-36.7' fill='url(%26quot%3b%23SvgjsPattern4699%26quot%3b)' transform='rotate(40.41%2c 643.68%2c 103.66)'%3e%3c/rect%3e%3cpath d='M1200.72 377.7 L1254.55 366.77L1202.9289620428722 347.5289620428721z' stroke='rgba(29%2c 168%2c 135%2c 1)' stroke-width='1.04' stroke-dasharray='3%2c 2'%3e%3c/path%3e%3cpath d='M1112 680.25 L1093.95 599.54L1159.7995400137502 583.0704599862496z' stroke='rgba(0%2c 120%2c 127%2c 1)' stroke-width='2.79' stroke-dasharray='4%2c 4'%3e%3c/path%3e%3cpath d='M847.2099999999999 231.37 L839.03 256.36L858.8037601783429 259.548760178343z' stroke='rgba(249%2c 248%2c 113%2c 1)' stroke-width='1' stroke-dasharray='3%2c 3'%3e%3c/path%3e%3cpath d='M1089.18 432.4a5.6 5.6 0 1 0-9.14 6.46 5.6 5.6 0 1 0 9.14-6.46zM1076.12 441.63a5.6 5.6 0 1 0-9.15 6.46 5.6 5.6 0 1 0 9.15-6.46zM1063.05 450.86a5.6 5.6 0 1 0-9.15 6.46 5.6 5.6 0 1 0 9.15-6.46zM1049.98 460.09a5.6 5.6 0 1 0-9.15 6.46 5.6 5.6 0 1 0 9.15-6.46zM1106.09 400.87a5.6 5.6 0 1 0-9.14 6.46 5.6 5.6 0 1 0 9.14-6.46zM1093.02 410.1a5.6 5.6 0 1 0-9.14 6.46 5.6 5.6 0 1 0 9.14-6.46zM1079.95 419.33a5.6 5.6 0 1 0-9.14 6.46 5.6 5.6 0 1 0 9.14-6.46zM1066.89 428.56a5.6 5.6 0 1 0-9.15 6.46 5.6 5.6 0 1 0 9.15-6.46z' stroke='rgba(0%2c 120%2c 127%2c 1)' stroke-width='2.7'%3e%3c/path%3e%3cpath d='M937.29 169.61 L1022.31 238.72L929.8392823651576 254.12571763484237z' stroke='rgba(0%2c 120%2c 127%2c 1)' stroke-width='1.36' stroke-dasharray='3%2c 3'%3e%3c/path%3e%3crect width='72' height='72' clip-path='url(%26quot%3b%23SvgjsClipPath4700%26quot%3b)' x='290' y='504.78' fill='url(%26quot%3b%23SvgjsPattern4701%26quot%3b)' transform='rotate(344.95%2c 326%2c 540.78)'%3e%3c/rect%3e%3ccircle r='61.995523777924106' cx='580.89' cy='402.78' fill='rgba(249%2c 248%2c 113%2c 1)'%3e%3c/circle%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask4694'%3e%3crect width='1200' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='100%25' y1='50%25' x2='0%25' y2='50%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient4695'%3e%3cstop stop-color='rgba(75%2c 80%2c 87%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(21%2c 31%2c 44%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cpattern x='0' y='0' width='348' height='6' patternUnits='userSpaceOnUse' id='SvgjsPattern4697'%3e%3crect width='348' height='3' x='0' y='0' fill='rgba(0%2c 73%2c 93%2c 1)'%3e%3c/rect%3e%3crect width='348' height='3' x='0' y='3' fill='rgba(0%2c 0%2c 0%2c 0)'%3e%3c/rect%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath4696'%3e%3ccircle r='87' cx='32.83' cy='367.72'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='12.76' height='12.76' patternUnits='userSpaceOnUse' id='SvgjsPattern4699'%3e%3cpath d='M6.38 1L6.38 11.76M1 6.38L11.76 6.38' stroke='rgba(0%2c 120%2c 127%2c 1)' fill='none' stroke-width='2.24'%3e%3c/path%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath4698'%3e%3ccircle r='70.18' cx='643.68' cy='103.66'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='72' height='6' patternUnits='userSpaceOnUse' id='SvgjsPattern4701'%3e%3crect width='72' height='3' x='0' y='0' fill='rgba(29%2c 168%2c 135%2c 1)'%3e%3c/rect%3e%3crect width='72' height='3' x='0' y='3' fill='rgba(0%2c 0%2c 0%2c 0)'%3e%3c/rect%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath4700'%3e%3ccircle r='18' cx='326' cy='540.78'%3e%3c/circle%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e");
+        background-position: center;
+        background-size: cover;
+    }
+    
+    footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 1em;
+    }
+    
+    .card{
+        border-radius: 1em;
+        background: #ffffff;
+        gap: 1em;
+        border: 0;
+    }
+
+</style>

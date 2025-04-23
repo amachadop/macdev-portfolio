@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import WorkCard from "../components/WorkCard.astro"
+---
+
+<Layout title="Machado.Dev - Mis Trabajos" page='works'>
+
+    <div class="container-fluid p-4">
+
+        <h4 class="section-title">Mis Trabajos</h4>
+
+        <WorkCard title='Programador Remoto - ComoHacerloIO' color='secondary' from="Abril 2024" to="">
+            <p>En ComoHacerloIO he trabajado en el diseño, desarrollo e implementación de sistemas CRM personalizados para distintos tipos de negocios. Utilizo Django y Django REST Framework como herramientas principales de desarrollo backend, integrando tecnologías como Celery y Redis para la gestión de tareas asincrónicas y en segundo plano. Todos los proyectos han sido desplegados en entornos Docker, gestionados a través de Portainer, garantizando un proceso de despliegue eficiente y reproducible.</p>
+            <p>Uno de los proyectos más destacados fue el desarrollo de un chatbot con comunicación en tiempo real utilizando WebSockets, lo cual permitió una interacción fluida entre los usuarios del sistema y los administradores.</p>
+            <p>Además del rol de programador, también he asumido responsabilidades como analista, participando activamente en la definición de requisitos y diseño funcional de los sistemas.</p>
+        </WorkCard>
+
+    </div>
+
+</Layout>

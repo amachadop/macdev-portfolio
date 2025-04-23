@@ -1,0 +1,79 @@
+---
+interface Props {
+    title: string,
+    link: string,
+    m_class: string
+}
+
+const {title,link, m_class} = Astro.props;
+---
+<a href={link} class=`button-65 ${m_class}` role="button">
+    <slot />
+    {title}
+</a>
+<style>
+.button-65 {
+        width: auto !important;
+        appearance: none;
+        backface-visibility: hidden;
+        background-color: var(--primary-color);
+        border-radius: 10px;
+        border-style: none;
+        box-shadow: none;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        height: 50px;
+        letter-spacing: normal;
+        line-height: 1.5;
+        outline: none;
+        overflow: hidden;
+        padding: 14px 30px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        transform: translate3d(0, 0, 0);
+        transition: all .3s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: top;
+        white-space: nowrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .button-65:hover {
+        background-color: var(--primary-color-hover);
+        box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+        opacity: 1;
+        transform: translateY(0);
+        transition-duration: .35s;
+    }
+    
+    .button-65:hover:after {
+        opacity: .5;
+    }
+    
+    .button-65:active {
+        box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+        transform: translateY(2px);
+        transition-duration: .35s;
+    }
+    
+    .button-65:active:after {
+        opacity: 1;
+    }
+    
+    @media (min-width: 768px) {
+        .button-65 {
+            padding: 14px 22px;
+            width: 176px;
+        }
+    }
+</style>

@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = await getCollection('projects');
+---
+
+<Layout title="Machado.Dev - Mis Proyectos" page='projects'>
+
+    <div class="container-fluid p-4">
+
+        <h4 class="section-title">Mis Proyectos</h4>
+
+        <div class="row g-2">
+
+            {
+                projects.length ?
+                projects.map(project =>{
+                    const {slug, data} = project
+                    const { title, tools,description, is_finished } = data
+                    return(
+                        <div class="col-md-4">
+                            <ProjectCard title={title} tools={tools} description={description} is_finished={is_finished} />
+                        </div>
+                    )
+                }) : 
+                <div class="col-md-12 d-flex align-items-center justify-content-center">
+                    <img src="/img/empty_projects.png" class="w-50">
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</Layout>

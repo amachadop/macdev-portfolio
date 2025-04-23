@@ -1,0 +1,358 @@
+---
+interface Props{
+    title: string,
+    page: string
+}
+
+import 'bootstrap/dist/css/bootstrap.css';
+import TabsContainer from '../components/TabsContainer.astro';
+import { ClientRouter } from 'astro:transitions';
+import MButton from '../components/MButton.astro';
+import {data} from '../utils/pages-data.js';
+
+const {pages_data} = data;
+const {title,page} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <title>{title}</title>
+    <ClientRouter />
+</head>
+<body>
+    <main style="overflow-y: auto; height: 100vh;">
+        <div class="container-xl pt-5 pb-5 d-flex flex-column">
+
+            <div class="mt-5 mb-3"></div>
+
+            <div class="row g-3 mt-5">
+
+                <div class="col-sm-12 col-md-4 col-xl-3">
+
+                    <div class="card p-3 d-flex flex-column align-items-center">
+
+                        <img src="/img/photo.jpg" alt="Foto de Perfil" class="profile_photo">
+
+                        <h5 class="m-0">Alejandro Machado</h5>
+
+                        <span class="badge-container">Desarrollador Full-Stack</span>
+
+                        <div class="social-media-list">
+
+                            <a href="https://wa.me/5352524384" target="_blank" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48" fill="none"><path d="M24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48Z" fill="#25D366"/><path fill-rule="evenodd" clip-rule="evenodd" d="M24.7911 37.3525H24.7852C22.3967 37.3517 20.0498 36.7524 17.9653 35.6154L10.4 37.6L12.4246 30.2048C11.1757 28.0405 10.5186 25.5855 10.5196 23.0702C10.5228 15.2017 16.9248 8.79999 24.7909 8.79999C28.6086 8.80164 32.1918 10.2879 34.8862 12.9854C37.5806 15.6828 39.0636 19.2683 39.0621 23.0815C39.059 30.9483 32.6595 37.3493 24.7911 37.3525ZM18.3159 33.0319L18.749 33.2889C20.5702 34.3697 22.6578 34.9415 24.7863 34.9423H24.7911C31.3288 34.9423 36.6499 29.6211 36.6525 23.0807C36.6538 19.9112 35.4212 16.9311 33.1817 14.689C30.9422 12.4469 27.964 11.2115 24.7957 11.2104C18.2529 11.2104 12.9318 16.5311 12.9292 23.0711C12.9283 25.3124 13.5554 27.4951 14.7427 29.3836L15.0248 29.8324L13.8265 34.2095L18.3159 33.0319ZM31.4924 26.154C31.7411 26.2742 31.9091 26.3554 31.9808 26.4751C32.0699 26.6238 32.0699 27.3378 31.7729 28.1708C31.4756 29.0038 30.051 29.764 29.3659 29.8663C28.7516 29.9582 27.9741 29.9965 27.1199 29.725C26.602 29.5607 25.9379 29.3413 25.0871 28.9739C21.7442 27.5304 19.485 24.2904 19.058 23.678C19.0281 23.6351 19.0072 23.6051 18.9955 23.5895L18.9927 23.5857C18.804 23.3339 17.5395 21.6468 17.5395 19.9008C17.5395 18.2582 18.3463 17.3973 18.7177 17.001C18.7432 16.9739 18.7666 16.9489 18.7875 16.926C19.1144 16.569 19.5007 16.4797 19.7384 16.4797C19.9761 16.4797 20.2141 16.4819 20.4219 16.4924C20.4475 16.4937 20.4742 16.4935 20.5017 16.4933C20.7095 16.4921 20.9686 16.4906 21.2242 17.1045C21.3225 17.3407 21.4664 17.691 21.6181 18.0604C21.9249 18.8074 22.264 19.6328 22.3236 19.7522C22.4128 19.9307 22.4722 20.1389 22.3533 20.3769C22.3355 20.4126 22.319 20.4463 22.3032 20.4785C22.2139 20.6608 22.1483 20.7948 21.9967 20.9718C21.9372 21.0413 21.8756 21.1163 21.814 21.1913C21.6913 21.3407 21.5687 21.4901 21.4619 21.5965C21.2833 21.7743 21.0975 21.9672 21.3055 22.3242C21.5135 22.6812 22.2292 23.8489 23.2892 24.7945C24.4288 25.8109 25.4192 26.2405 25.9212 26.4582C26.0192 26.5008 26.0986 26.5352 26.1569 26.5644C26.5133 26.7429 26.7213 26.713 26.9294 26.4751C27.1374 26.2371 27.8208 25.4338 28.0584 25.0769C28.2961 24.7201 28.5339 24.7795 28.8607 24.8984C29.1877 25.0176 30.9408 25.8801 31.2974 26.0586C31.367 26.0934 31.4321 26.1249 31.4924 26.154Z" fill="#FDFDFD"/></svg>
+                            </a>
+
+                            <a href="https://github.com/amachadop" target="_blank" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 34 34"><path d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"/></svg>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/machadodev99/" target="_blank" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="30" height="30"><path d="M29.63.001H2.362C1.06.001 0 1.034 0 2.306V29.69C0 30.965 1.06 32 2.362 32h27.27C30.937 32 32 30.965 32 29.69V2.306C32 1.034 30.937.001 29.63.001z" fill="#0177b5"/><path d="M4.745 11.997H9.5v15.27H4.745zm2.374-7.6c1.517 0 2.75 1.233 2.75 2.75S8.636 9.9 7.12 9.9a2.76 2.76 0 0 1-2.754-2.753 2.75 2.75 0 0 1 2.753-2.75m5.35 7.6h4.552v2.087h.063c.634-1.2 2.182-2.466 4.5-2.466 4.806 0 5.693 3.163 5.693 7.274v8.376h-4.743V19.84c0-1.77-.032-4.05-2.466-4.05-2.47 0-2.85 1.93-2.85 3.92v7.554h-4.742v-15.27z" fill="#fff"/></svg>
+                            </a>
+
+                            <a href="https://www.instagram.com/alej_machado/" target="_blank" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;" version="1.1" viewBox="0 0 24 24" width="100%" xml:space="preserve"><rect height="24" id="Artboard10" style="fill:none;" width="24" x="0" y="0"/><path d="M22,7c0,-2.761 -2.239,-5 -5,-5c-3.054,0 -6.946,0 -10,0c-2.761,0 -5,2.239 -5,5c0,3.054 0,6.946 0,10c0,2.761 2.239,5 5,5c3.054,0 6.946,0 10,0c2.761,0 5,-2.239 5,-5c0,-3.054 0,-6.946 0,-10Z" style="fill:url(#_Radial1);"/><path d="M14.958,5.005c2.091,0.02 4.016,1.815 4.037,4.037c0.007,1.972 0.007,3.944 0,5.916c-0.02,2.083 -1.815,4.016 -4.037,4.037c-1.972,0.007 -3.944,0.007 -5.916,0c-2.092,-0.02 -4.016,-1.815 -4.037,-4.037c-0.007,-1.972 -0.007,-3.944 0,-5.916c0.019,-2.093 1.81,-4.016 4.037,-4.037c1.972,-0.007 3.944,-0.007 5.916,0Zm-5.889,0.945c-1.623,0.005 -3.103,1.412 -3.119,3.098c-0.006,1.968 -0.006,3.936 0,5.904c0.015,1.605 1.388,3.082 3.098,3.098c1.968,0.006 3.936,0.006 5.904,0c1.609,-0.015 3.082,-1.388 3.098,-3.098c0.006,-1.968 0.006,-3.936 0,-5.904c-0.015,-1.616 -1.415,-3.082 -3.098,-3.098c-1.961,-0.006 -3.922,0 -5.883,0Z" style="fill:#fff;fill-rule:nonzero;"/><path d="M12.024,8.5c1.618,0.015 3.126,1.263 3.422,2.862c0.211,1.14 -0.187,2.376 -1.027,3.178c-0.935,0.89 -2.382,1.208 -3.622,0.754c-1.386,-0.507 -2.361,-1.968 -2.296,-3.448c0.079,-1.768 1.641,-3.34 3.499,-3.346c0.008,0 0.016,0 0.024,0Zm-0.04,0.947c-1.155,0.011 -2.244,0.887 -2.484,2.025c-0.243,1.151 0.419,2.428 1.506,2.887c1.187,0.502 2.72,-0.061 3.293,-1.233c0.593,-1.211 0.034,-2.856 -1.218,-3.441c-0.341,-0.159 -0.72,-0.239 -1.097,-0.238Z" style="fill:#fff;fill-rule:nonzero;"/><path d="M16.5,8.227c0,-0.193 -0.077,-0.378 -0.213,-0.514c-0.136,-0.136 -0.321,-0.213 -0.514,-0.213c-0.015,0 -0.031,0 -0.046,0c-0.193,0 -0.378,0.077 -0.514,0.213c-0.136,0.136 -0.213,0.321 -0.213,0.514c0,0.008 0,0.015 0,0.023c0,0.199 0.079,0.39 0.22,0.53c0.14,0.141 0.331,0.22 0.53,0.22c0,0 0,0 0,0c0.414,0 0.75,-0.336 0.75,-0.75c0,-0.008 0,-0.015 0,-0.023Z" style="fill:#fff;"/><defs><radialGradient cx="0" cy="0" gradientTransform="matrix(27.933,0,0,27.933,2,21.5)" gradientUnits="userSpaceOnUse" id="_Radial1" r="1"><stop offset="0" style="stop-color:#ff8100;stop-opacity:1"/><stop offset="0.19" style="stop-color:#ff7209;stop-opacity:1"/><stop offset="0.32" style="stop-color:#f55e16;stop-opacity:1"/><stop offset="0.48" style="stop-color:#d92938;stop-opacity:1"/><stop offset="1" style="stop-color:#9100ff;stop-opacity:1"/></radialGradient></defs></svg>
+                            </a>
+
+                        </div>
+
+                        <ul class="data-container">
+
+                            <li class="data-element">
+                                <div class="icon-container">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14z" /><path d="M11 4h2" /><path d="M12 17v.01" /></svg>
+                                </div>
+                                <div class="data-info">
+                                    <span class="mini-text">Teléfono</span>
+                                    <span class="text">+53 52524384</span>
+                                </div>
+                            </li>
+
+                            <li class="data-element">
+                                <div class="icon-container">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                                </div>
+                                <div class="data-info">
+                                    <span class="mini-text">Correo Electrónico</span>
+                                    <span class="text">amacparedes@gmail.com</span>
+                                </div>
+                            </li>
+
+                            <li class="data-element">
+                                <div class="icon-container">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" /></svg>
+                                </div>
+                                <div class="data-info">
+                                    <span class="mini-text">Dirección</span>
+                                    <span class="text">La Habana, Cuba</span>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <MButton title='Descargar CV' link='/files/curriculum.docx' m_class=''>
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon me-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M12 17v-6" /><path d="M9.5 14.5l2.5 2.5l2.5 -2.5" /></svg>
+                        </MButton>
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12 col-md-8 col-xl-9">
+
+                    <div class="row g-3">
+
+                        <div class="col">
+
+                            <div class="card p-0">
+                                
+                                <slot />
+
+                                <footer>
+                                    <span><strong>machado.Dev™</strong> ©2025 Portfolio Personal</span>
+                                </footer>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-auto">
+
+                            <TabsContainer transition:name='tab-container' page={page} tabs_list={JSON.stringify(pages_data)}/>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
+
+<style is:global>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: 600;
+    color: var(--primary-color-hover);
+}
+
+p{
+    font-weight: 200;
+    text-align: justify;
+}
+
+:root{
+    --background-color: #151f2c;
+    --second-background: #f1f1e6;
+    --primary-color: #00787F;
+    --primary-color-hover: #00495D;
+}
+
+.section-container{
+    background-color: var(--second-background);
+}
+
+.button-65 {
+    width: auto !important;
+    appearance: none;
+    backface-visibility: hidden;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    height: 50px;
+    letter-spacing: normal;
+    line-height: 1.5;
+    outline: none;
+    overflow: hidden;
+    padding: 14px 30px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-65:hover {
+    background-color: var(--primary-color-hover);
+    box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+}
+
+.button-65:hover:after {
+    opacity: .5;
+}
+
+.button-65:active {
+    box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+    transform: translateY(2px);
+    transition-duration: .35s;
+}
+
+.button-65:active:after {
+    opacity: 1;
+}
+
+@media (min-width: 768px) {
+    .button-65 {
+        padding: 14px 22px;
+        width: 176px;
+    }
+}
+
+body{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1200' height='560' preserveAspectRatio='none' viewBox='0 0 1200 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask4694%26quot%3b)' fill='none'%3e%3crect width='1200' height='560' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient4695%26quot%3b)'%3e%3c/rect%3e%3crect width='348' height='348' clip-path='url(%26quot%3b%23SvgjsClipPath4696%26quot%3b)' x='-141.17' y='193.72' fill='url(%26quot%3b%23SvgjsPattern4697%26quot%3b)' transform='rotate(166.11%2c 32.83%2c 367.72)'%3e%3c/rect%3e%3cpath d='M289.01 500.52L293.5 512.52 282.78 519.53 287.27 531.52 276.56 538.54 281.05 550.53 270.34 557.54M281.4 498.03L285.9 510.03 275.18 517.04 279.67 529.03 268.96 536.05 273.45 548.04 262.73 555.05' stroke='rgba(137%2c 213%2c 123%2c 1)' stroke-width='1.67' stroke-dasharray='3%2c 2'%3e%3c/path%3e%3crect width='280.72' height='280.72' clip-path='url(%26quot%3b%23SvgjsClipPath4698%26quot%3b)' x='503.32' y='-36.7' fill='url(%26quot%3b%23SvgjsPattern4699%26quot%3b)' transform='rotate(40.41%2c 643.68%2c 103.66)'%3e%3c/rect%3e%3cpath d='M1200.72 377.7 L1254.55 366.77L1202.9289620428722 347.5289620428721z' stroke='rgba(29%2c 168%2c 135%2c 1)' stroke-width='1.04' stroke-dasharray='3%2c 2'%3e%3c/path%3e%3cpath d='M1112 680.25 L1093.95 599.54L1159.7995400137502 583.0704599862496z' stroke='rgba(0%2c 120%2c 127%2c 1)' stroke-width='2.79' stroke-dasharray='4%2c 4'%3e%3c/path%3e%3cpath d='M847.2099999999999 231.37 L839.03 256.36L858.8037601783429 259.548760178343z' stroke='rgba(249%2c 248%2c 113%2c 1)' stroke-width='1' stroke-dasharray='3%2c 3'%3e%3c/path%3e%3cpath d='M1089.18 432.4a5.6 5.6 0 1 0-9.14 6.46 5.6 5.6 0 1 0 9.14-6.46zM1076.12 441.63a5.6 5.6 0 1 0-9.15 6.46 5.6 5.6 0 1 0 9.15-6.46zM1063.05 450.86a5.6 5.6 0 1 0-9.15 6.46 5.6 5.6 0 1 0 9.15-6.46zM1049.98 460.09a5.6 5.6 0 1 0-9.15 6.46 5.6 5.6 0 1 0 9.15-6.46zM1106.09 400.87a5.6 5.6 0 1 0-9.14 6.46 5.6 5.6 0 1 0 9.14-6.46zM1093.02 410.1a5.6 5.6 0 1 0-9.14 6.46 5.6 5.6 0 1 0 9.14-6.46zM1079.95 419.33a5.6 5.6 0 1 0-9.14 6.46 5.6 5.6 0 1 0 9.14-6.46zM1066.89 428.56a5.6 5.6 0 1 0-9.15 6.46 5.6 5.6 0 1 0 9.15-6.46z' stroke='rgba(0%2c 120%2c 127%2c 1)' stroke-width='2.7'%3e%3c/path%3e%3cpath d='M937.29 169.61 L1022.31 238.72L929.8392823651576 254.12571763484237z' stroke='rgba(0%2c 120%2c 127%2c 1)' stroke-width='1.36' stroke-dasharray='3%2c 3'%3e%3c/path%3e%3crect width='72' height='72' clip-path='url(%26quot%3b%23SvgjsClipPath4700%26quot%3b)' x='290' y='504.78' fill='url(%26quot%3b%23SvgjsPattern4701%26quot%3b)' transform='rotate(344.95%2c 326%2c 540.78)'%3e%3c/rect%3e%3ccircle r='61.995523777924106' cx='580.89' cy='402.78' fill='rgba(249%2c 248%2c 113%2c 1)'%3e%3c/circle%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask4694'%3e%3crect width='1200' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='100%25' y1='50%25' x2='0%25' y2='50%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient4695'%3e%3cstop stop-color='rgba(75%2c 80%2c 87%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(21%2c 31%2c 44%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cpattern x='0' y='0' width='348' height='6' patternUnits='userSpaceOnUse' id='SvgjsPattern4697'%3e%3crect width='348' height='3' x='0' y='0' fill='rgba(0%2c 73%2c 93%2c 1)'%3e%3c/rect%3e%3crect width='348' height='3' x='0' y='3' fill='rgba(0%2c 0%2c 0%2c 0)'%3e%3c/rect%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath4696'%3e%3ccircle r='87' cx='32.83' cy='367.72'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='12.76' height='12.76' patternUnits='userSpaceOnUse' id='SvgjsPattern4699'%3e%3cpath d='M6.38 1L6.38 11.76M1 6.38L11.76 6.38' stroke='rgba(0%2c 120%2c 127%2c 1)' fill='none' stroke-width='2.24'%3e%3c/path%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath4698'%3e%3ccircle r='70.18' cx='643.68' cy='103.66'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='72' height='6' patternUnits='userSpaceOnUse' id='SvgjsPattern4701'%3e%3crect width='72' height='3' x='0' y='0' fill='rgba(29%2c 168%2c 135%2c 1)'%3e%3c/rect%3e%3crect width='72' height='3' x='0' y='3' fill='rgba(0%2c 0%2c 0%2c 0)'%3e%3c/rect%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath4700'%3e%3ccircle r='18' cx='326' cy='540.78'%3e%3c/circle%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e");
+    background-position: center;
+    background-size: cover;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.card{
+    border-radius: 1em;
+    background: #ffffff;
+    gap: 1em;
+    border: 0;
+}
+
+.profile_photo{
+    width: 70%;
+    border-radius: 100%;
+    margin-top: -50%;
+    border: 1px solid white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+@media (max-width: 767px) {
+    .profile_photo{
+        margin-top: -20%;
+    }
+}
+
+@media (max-width: 572px) {
+    .profile_photo{
+        margin-top: -30%;
+    }
+}
+
+@media (max-width: 425px) {
+    .profile_photo{
+        margin-top: -45%;
+    }
+}
+
+.badge-container{
+    background: var(--second-background);
+    padding: .2em 1em;
+    border-radius: 1em;
+    color: #151f2c;
+    font-weight: 600;
+    font-size: small;
+    color: var(--primary-color-hover);
+}
+
+.social-media-list{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+
+    .social-link{
+        background-color: var(--second-background);
+        padding: .3em .5em;
+        border-radius: .8em;
+        color: var(--primary-color);
+    }
+
+    .social-link:hover{
+        background-color: #05bfc95d;
+    }
+
+}
+
+.data-container{
+    width: 100%;
+    list-style: none;
+    padding: 1em 1.5em;
+    background-color: var(--second-background);
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    overflow: hidden;
+
+    .data-element{
+        display: flex;
+        gap: .5em;
+        padding: .3em 0;
+
+        .icon-container{
+            background-color: #ffffff;
+            border-radius: .5em;
+            padding: .5em;
+            color: var(--primary-color);
+        }
+
+        .data-info{
+            display: flex;
+            flex-direction: column;
+
+            .mini-text{
+                color: var(--primary-color-hover);
+                font-weight: 300;
+                font-size: smaller;
+            }
+
+            .text{
+                font-weight: 500;
+                color: var(--primary-color-hover);
+                font-size: small;
+            }
+        }
+
+    }
+
+}
+
+</style>

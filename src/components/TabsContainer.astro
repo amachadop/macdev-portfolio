@@ -1,0 +1,33 @@
+---
+interface Props{
+    page: string,
+    tabs_list: string,
+}
+
+const {page,tabs_list} = Astro.props;
+
+const tabs = JSON.parse(tabs_list);
+
+import Tab from './Tab.astro';
+---
+<div class="card p-2 pt-3 pb-3 radio-container-list">
+    {
+        tabs.map((tab)=>(
+            <Tab title={tab.name} icon={tab.icon}  link={tab.link} is_active={page===tab.page_name}/>
+        ))
+    }
+</div>
+
+<style>
+.radio-container-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media(max-width: 992px) {
+    .radio-container-list{
+        flex-direction: row;
+    }
+}
+</style>

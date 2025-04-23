@@ -1,0 +1,135 @@
+---
+interface Props{
+    title: string,
+    color: string,
+}
+
+const {title,color} = Astro.props;
+---
+<div class=`skills-card ${color} h-100`>
+    <div class="skills-card-header">
+        <slot name="icon"/>
+        <h6 class="skills-card-title">{title}</h6>
+    </div>
+    <p>
+        <slot />
+    </p>
+</div>
+
+<style>
+p{
+    text-align: justify;
+}
+
+.skills-card{
+    background-color: #c3cddf;
+    border-radius: 1em;
+    padding: .7em;
+
+
+    .skills-card-header{
+        display: flex;
+        align-items: center;
+        gap: .5em;
+
+        .skills-card-title{
+            color: #667080;
+            margin: 0;
+        }
+
+        svg{
+            stroke: #667080;
+        }
+
+    }
+
+    p{
+        margin-left: 2em;
+
+        .subtitle{
+            font-style: italic;
+            color: #3c4554;
+            font-weight: 400;
+        }
+    }
+
+}
+
+.skills-card.primary{
+    background-color: #efcfe3 ;
+    border-radius: 1em;
+    padding: .7em;
+
+
+    .skills-card-header{
+        display: flex;
+        align-items: center;
+        gap: .5em;
+
+        .skills-card-title{
+            color: #e27396  ;
+            margin: 0;
+        }
+
+        svg{
+            stroke: #e27396  ;
+        }
+
+    }
+
+    p{
+        margin-left: 2em;
+
+        .subtitle{
+            font-style: italic;
+            color: #e27396  ;
+            font-weight: 400;
+        }
+    }
+
+}
+
+.skills-card.secondary{
+    background-color: #bde0fe ;
+    border-radius: 1em;
+    padding: .7em;
+
+
+    .skills-card-header{
+        display: flex;
+        align-items: center;
+        gap: .5em;
+
+        .skills-card-title{
+            color: #4ca4f7  ;
+            margin: 0;
+        }
+
+        svg{
+            stroke: #4ca4f7  ;
+        }
+
+    }
+
+    p{
+        margin-left: 2em;
+
+        .subtitle{
+            font-style: italic;
+            color: #4ca4f7;
+            font-weight: 400;
+        }
+    }
+
+}
+
+@media (max-width: 767px) {
+    .skills-card{
+
+        p{
+            margin-left: 0;
+        }
+
+    }
+}
+</style>

@@ -1,0 +1,88 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SkillCard from "../components/SkillCard.astro";
+import SkillList from "../components/SkillList.astro";
+---
+
+<Layout title="Machado.Dev - Mis Estudios" page="skills">
+
+    <div class="container-fluid p-4">
+
+        <h4 class="section-title">Educación</h4>
+
+        <SkillCard title='Ingeniero en Ciencias Informáticas' color='primary'>
+            <span class="subtitle">Universidad de las Ciencias Informáticas (UCI), La Habana, Cuba — 2023</span><br>
+            Graduado con un promedio académico de 4.0/5.0. Durante la carrera, me especialicé en el desarrollo de software, enfocándome en aplicaciones móviles y desarrollo web.
+        </SkillCard>
+
+    </div>
+
+    <div class="container-fluid p-4 section-container">
+
+        <div class="row g-2">
+
+            <div class="col-md-6">
+                <h4 class="section-title">Habilidades</h4>
+
+                <div class="d-flex flex-column" style="gap: .5em;">
+                    <SkillList title='HTML + CSS' number='90' ></SkillList>
+                    <SkillList title='SQL' number='70' ></SkillList>
+                    <SkillList title='JavaScript' number='80' ></SkillList>
+                    <SkillList title='Python' number='85' ></SkillList>
+                    <SkillList title='Java' number='80' ></SkillList>
+                    <SkillList title='NodeJs' number='30' ></SkillList>
+                    <SkillList title='Django + DRF' number='90' ></SkillList>
+                    <SkillList title='Astro' number='20' ></SkillList>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <h4 class="section-title">Conocimientos</h4>
+
+                <div class="row g-2 ps-3 pe-3">
+                    <div class="col-auto">
+                        <div class="knowledge-badge">Docker</div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="knowledge-badge">Android (Java)</div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="knowledge-badge">Celery + Redis</div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="knowledge-badge">CRM</div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="knowledge-badge">APIs REST</div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="knowledge-badge">Manejo de BD</div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="knowledge-badge">Websockets (Django)</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</Layout>
+
+<style>
+.knowledge-badge{
+    background-color: gainsboro;
+    width: auto;
+    border-radius: .5em;
+    padding: .2em 1em;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1);
+    font-size: small;
+    font-weight: 600;
+    font-style: italic;
+    text-transform: uppercase;
+}
+</style>
